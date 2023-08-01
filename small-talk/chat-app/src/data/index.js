@@ -19,7 +19,7 @@ const Profile_Menu = [
     icon: <Gear />,
   },
   {
-    title: "Profile",
+    title: "Logout",
     icon: <SignOut />,
   },
 ];
@@ -331,6 +331,81 @@ const SHARED_DOCS = [
   }
 ]
 
+const MembersList = [
+  {
+    id: 0,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+  },
+  {
+    id: 1,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    id: 2,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    id: 3,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    id: 4,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    id: 5,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    id: 6,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    id: 7,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    id: 8,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    id: 9,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    id: 10,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    id: 11,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+]
+
 export {
   Profile_Menu,
   Nav_Setting,
@@ -340,5 +415,6 @@ export {
   Message_options,
   SHARED_LINKS,
   SHARED_DOCS,
-  CallLogs
+  CallLogs,
+  MembersList
 };

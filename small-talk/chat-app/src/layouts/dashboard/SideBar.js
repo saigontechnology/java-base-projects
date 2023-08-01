@@ -10,10 +10,38 @@ import { useTheme } from "@mui/material/styles"
 
 import useSettings from "../../hooks/useSettings"
 import AntSwitch from "../../components/settings/AntSwitch";
+import {useNavigate} from "react-router-dom";
+
+const getPath = (index) => {
+    switch (index) {
+        case 0:
+            return "/app"
+        case 1:
+            return "/group"
+        case 2:
+            return "/call"
+        case 3:
+            return "/settings"
+    }
+}
+
+const getMenuPath = (index) => {
+    switch (index){
+        case 0:
+            return "/profile";
+        case 1:
+            return "/settings";
+        case 2:
+            //Remove token and update authenticated = false
+            return "/auth/login";
+    }
+
+}
 
 const ProfileOptions = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+    const navigate = useNavigate();
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -46,9 +74,9 @@ const ProfileOptions = () => {
                 horizontal: "left"
             }}>
                 <Stack spacing={1} px={1}>
-                    {Profile_Menu.map((el) => (
+                    {Profile_Menu.map((el,idx) => (
                         <MenuItem>
-                            <Stack sx={{width: 100}} direction="row" alignItems="center" justifyContent="space-between">
+                            <Stack sx={{width: 100}} direction="row" alignItems="center" justifyContent="space-between" onClick={()=>navigate(getMenuPath(idx))}>
                                 <span>{el.title}</span>
                                 {el.icon}
                             </Stack>
@@ -62,7 +90,7 @@ const ProfileOptions = () => {
 
 const SideBar = () => {
     const theme = useTheme()
-
+    const navigate = useNavigate()
     const [selected, setSelected] = useState(0);
 
     const {onToggleMode} = useSettings();
@@ -82,6 +110,7 @@ const SideBar = () => {
                         </Box>
                     : <IconButton onClick={() =>{
                         setSelected(el.index);
+                        navigate(getPath(el.index));
                     }} sx={{width: "max-content", color: theme.palette.mode === "light" ? "#000" : theme.palette.primary}} key={el.index} >{el.icon}</IconButton> 
                     ))}
                     <Divider sx={{width: "48px"}} />
@@ -94,6 +123,7 @@ const SideBar = () => {
                     ) : (
                         <IconButton  onClick={() =>{
                         setSelected(3);
+                        navigate(getPath(3));
                         }} sx={{width: "max-content", color: theme.palette.mode === "light" ? "#000" : theme.palette.primary}}>
                         <Gear />
                         </IconButton>

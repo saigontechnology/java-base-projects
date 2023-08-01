@@ -3,7 +3,7 @@ import { Dialog, DialogTitle, DialogContent, Slide, Stack} from "@mui/material";
 import { Search, SearchIconWrapper, StyledInputBase } from "../../components/Search";
 import { MagnifyingGlass } from "phosphor-react";
 import { CallElement } from "../../components/CallElement";
-import { CallLogs } from "../../data";
+import {CallLogs, MembersList} from "../../data";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -15,15 +15,18 @@ const StartCall = ({open, handleClose}) => {
         <Dialog maxWidth="md" open={open} onClose={handleClose} keepMounted TransitionComponent={Transition} aria-describedby="alert-dialog-slide-description" sx={{p: 4}}>
             <DialogTitle sx={{mb: 3}}>Start Call</DialogTitle>
             <DialogContent>
-                <Stack sx={{width: "100%"}}>
-                    <Search>
-                        <SearchIconWrapper>
-                            <MagnifyingGlass color="#709CE6" />
-                        </SearchIconWrapper>
-                        <StyledInputBase placeholder="Search..." inputProps={{"aria-label": "search"}} />
-                    </Search>
+                <Stack spacing={1}>
+                    <Stack sx={{width: "100%"}}>
+                        <Search>
+                            <SearchIconWrapper>
+                                <MagnifyingGlass color="#709CE6"/>
+                            </SearchIconWrapper>
+                            <StyledInputBase placeholder="Search..." inputProps={{"aria-label": "search"}}/>
+                        </Search>
+                    </Stack>
+                    {/*{CallLogs.map((el) => <CallElement {...el} />)}*/}
+                    {MembersList.map((el) => <CallElement {...el} />)}
                 </Stack>
-                {CallLogs.map((el) => <CallElement {...el} />)}
             </DialogContent>
         </Dialog>
     )

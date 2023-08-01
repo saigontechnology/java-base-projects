@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Box, Divider, IconButton, Link, Stack, Typography } from "@mui/material";
 import { useTheme} from "@mui/material/styles"
-import { MagnifyingGlass, Phone } from "phosphor-react";
+import {MagnifyingGlass, Phone, Plus} from "phosphor-react";
 import { Search, SearchIconWrapper, StyledInputBase } from "../../components/Search";
-import { CallLogElement } from "../../components/CallElement";
-import { CallLogs } from "../../data";
+import {CallElement, CallLogElement} from "../../components/CallElement";
+import {CallLogs, MembersList} from "../../data";
 import StartCall from "../../sections/main/StartCall";
 
 const Call = () => {
@@ -42,12 +42,13 @@ const Call = () => {
                     <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
                         <Typography variant="subtitle2" component={Link}>Start new conversation</Typography>
                         <IconButton onClick={handleOpenStartCallDialog}>
-                            <Phone size={20} style={{color: (them) => theme.palette.primary.main}} />
+                            <Plus size={20} style={{color: (them) => theme.palette.primary.main}} />
                         </IconButton>
                     </Stack>
                     <Divider />
                     {/* Call log */}
                     {CallLogs.map((el) => <CallLogElement {...el} />)}
+
                     
                     {/* Option */}
                     
