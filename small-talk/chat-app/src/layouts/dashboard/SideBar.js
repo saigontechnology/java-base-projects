@@ -11,6 +11,8 @@ import { useTheme } from "@mui/material/styles"
 import useSettings from "../../hooks/useSettings"
 import AntSwitch from "../../components/settings/AntSwitch";
 import {useNavigate} from "react-router-dom";
+import {dispatch} from "../../redux/store";
+import {logOutUser} from "../../redux/slices/auth";
 
 const getPath = (index) => {
     switch (index) {
@@ -32,7 +34,6 @@ const getMenuPath = (index) => {
         case 1:
             return "/settings";
         case 2:
-            //Remove token and update authenticated = false
             return "/auth/login";
     }
 
@@ -75,8 +76,17 @@ const ProfileOptions = () => {
             }}>
                 <Stack spacing={1} px={1}>
                     {Profile_Menu.map((el,idx) => (
-                        <MenuItem>
-                            <Stack sx={{width: 100}} direction="row" alignItems="center" justifyContent="space-between" onClick={()=>navigate(getMenuPath(idx))}>
+                        <MenuItem key={idx}>
+                            <Stack sx={{width: 100}} direction="row" alignItems="center" justifyContent="space-between"
+                                   onClick={()=>{
+                                       if(idx ===2){
+                                           //Logout
+                                           //Remove token and update authenticated = false
+                                           dispatch(logOutUser())
+                                       }
+                                       const path = getMenuPath(idx);
+                                       navigate(path)
+                                   }}>
                                 <span>{el.title}</span>
                                 {el.icon}
                             </Stack>

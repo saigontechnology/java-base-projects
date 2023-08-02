@@ -8,8 +8,11 @@ import {yupResolver} from "@hookform/resolvers/yup"
 import RHFTextField from "../../components/hook-form/RHFTextField";
 import { Eye, EyeSlash } from "phosphor-react";
 import {Link as RouterLink} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {logInUser} from "../../redux/slices/auth";
 
 const LoginForm = () => {
+    const dispatch = useDispatch()
 
     const [showPassword, setShowPassword] = useState()
 
@@ -20,8 +23,8 @@ const LoginForm = () => {
     });
 
     const defaultValues = {
-        email: "test@gmail.com",
-        password: "abc123456789"
+        username: "abc_test3@yopmail.com",
+        password: "AaBbCc@123"
     }
 
     const methods = useForm({
@@ -31,9 +34,12 @@ const LoginForm = () => {
 
     const {reset, setError, handleSubmit, formState: {errors, isSubmitting, isSubmitSuccessful}} = methods
 
-    const onSubmit = async => (data) => {
+    const onSubmit = async (data) => {
         try {
+            const realData = {password: data.password, username: data.email}
             // Call api here
+            dispatch(logInUser(realData))
+
         } catch (error) {
             console.log(error)
             reset()
@@ -42,6 +48,9 @@ const LoginForm = () => {
                 message: error.message
             })
         }
+    }
+    function submitForm(){
+        console.log("SUBMIT FORM!")
     }
 
     return (

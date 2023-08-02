@@ -14,4 +14,5 @@ public interface UserService{
     Optional<User> findById(String id);
 
     boolean update(User user);
+    User getCurrentUser();
 }

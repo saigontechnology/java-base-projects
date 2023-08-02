@@ -1,12 +1,16 @@
 package com.projectbase.controller;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.projectbase.model.MyUserDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +33,7 @@ import com.projectbase.validator.ValidatorProvider;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/users/")
+@RequestMapping("/users")
 @Slf4j
 public class UserController{
 
@@ -99,5 +103,13 @@ public class UserController{
         responseDto.setData(isUpdated);
 
         return ResponseEntity.ok(responseDto);
+    }
+
+    @PreAuthorize("hasAuthority('USER') or hasAuthority('ADMIN')")
+    @GetMapping("/current")
+    public ResponseEntity<ResponseDto<UserResponse>> findCurrentUser() {
+        User user = userService.getCurrentUser();
+        UserResponse userResponses = userMapper.fromUser(user);
+        return ResponseEntity.ok(ResponseDto.response(userResponses));
     }
 }

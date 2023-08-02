@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
+import com.projectbase.model.MyUserDetail;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -74,6 +76,13 @@ public class UserServiceImpl implements UserService{
         userEntity.setFirstName(user.getFirstName());
         userEntity.setLastName(user.getLastName());
 
-        return userRepository.save(userEntity) != null;
+        userRepository.save(userEntity);
+        return true;
+    }
+
+    @Override
+    public User getCurrentUser() {
+        UserEntity userEntity = ((MyUserDetail) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUserEntity();
+        return userMapper.fromUserEntity(userEntity);
     }
 }
