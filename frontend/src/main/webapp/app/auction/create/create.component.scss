@@ -1,0 +1,14 @@
+.my-main-color {
+    color: #72A829;
+}
+
+.my-center-btn {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    border-radius: 5px;
+    background-color: grey;
+    color: white;
+}

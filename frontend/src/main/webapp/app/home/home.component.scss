@@ -1,0 +1,60 @@
+/* ==========================================================================
+Main page styles
+========================================================================== */
+
+#intro {
+  height: 250px;
+  /* top-left | top-right | bottom-right | bottom-left */
+  border-width: 1px;
+  border-color: black;
+  border-radius: 35px 0 35px 0;
+  border-style: solid;
+  margin-top: 10px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+#left-intro {
+  // background-color: red;
+  color: #72A829;
+  border-width: 2px;
+  border-color: red;
+}
+
+#left-intro p {
+  font-size: 25px;
+}
+
+#right-intro {
+  background-color: #72A829;
+  /* top-left | top-right | bottom-right | bottom-left */
+  border-radius: 35px 0 35px 0;
+}
+
+#right-intro .btn {
+  font-size: 10px;
+  font-style: normal;
+  width: 150px;
+  height: 55px;
+}
+
+.my-card {
+  width: 300px;
+}
+
+.card-img {
+  width: 300px;
+  height: 250px;
+  background: url('/content/images/macbook.png') no-repeat center top;
+  background-size: contain;
+}
+
+.card-text {
+  color: #72A829;
+  text-align: center;
+  font-family: Abel;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

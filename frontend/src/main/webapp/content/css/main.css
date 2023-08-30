@@ -1,0 +1,14 @@
+/* .main-background {
+    background-color: #72A829;
+} */
+
+.my-text-input {
+    border-width: 1px; 
+    border-color: #D9D9D9; 
+    border-radius: 5px; 
+    border-style: solid;
+}
+
+.my-main-color {
+    color: #72A829;
+}

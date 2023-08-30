@@ -1,0 +1,42 @@
+h1 {
+    color: #72A829;
+}
+
+#product-name{
+    color: #72A829;
+    font-size: 30px;
+}
+
+#product-detail-label, #product-description {
+    color: #72A829;
+    font-size: 20px;
+}
+
+#product-price {
+    font-size: 20px;
+}
+
+#product-detail {
+    font-size: 15px;
+}
+
+.my-main-color {
+    color: #72A829;
+}
+
+.my-card-border {
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    border-color: rgb(224, 224, 224);
+}
+
+.my-center-btn {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    border-radius: 5px;
+    background-color: grey;
+    color: white;
+}
