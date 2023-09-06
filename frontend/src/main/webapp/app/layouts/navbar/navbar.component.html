@@ -1,11 +1,11 @@
-<nav data-cy="navbar" class="navbar navbar-dark navbar-expand-md" style="background-color: #72A829;">
+<nav data-cy="navbar" class="navbar navbar-dark navbar-expand-lg my-main-background-color">
   <div class="container-fluid">
     <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
       <span class="logo-img"></span>
       <!-- <span jhiTranslate="global.title" class="navbar-title">Auction</span>
       <span class="navbar-version">{{ version }}</span> -->
     </a>
-    <div class="form-inline" style="margin-left: 50px; width: 500px;">
+    <div class="form-inline hidden-xs" style="display: flex; flex-grow: 1; margin-left: 20px;">
       <input class="form-control navbar-search" style="padding-left: 20px;" type="search" placeholder="Search by products">
     </div>
     <a
@@ -122,8 +122,9 @@
             </li>
           </ul>
         </li>
-        <li ngbDropdown class="nav-item dropdown pointer" display="dynamic" *ngIf="languages && languages.length > 1">
+        <li ngbDropdown class="nav-item dropdown" display="dynamic" *ngIf="languages && languages.length > 1">
           <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="languagesnavBarDropdown">
+            <span class="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-danger">10</span>
             <span>
               <fa-icon icon="bell"></fa-icon>
             </span>

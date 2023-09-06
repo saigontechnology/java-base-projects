@@ -12,7 +12,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 a:hover {
@@ -208,3 +208,22 @@ angular-cli removes postcss-rtl processed inline css, processed rules must be ad
   }
 }
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+
+
+.my-main-color {
+  color: #72A829;
+}
+
+.my-main-background-color {
+  background-color: #72A829;
+}
+
+.bid-price {
+  color: red;
+}
+
+.my-debug {
+  border-width: 1;
+  border-style: solid;
+  border-color: #000;
+}
