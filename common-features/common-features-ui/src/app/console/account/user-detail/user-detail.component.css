@@ -1,0 +1,53 @@
+.user-detail mat-divider{
+    margin-bottom: 20px;
+}
+
+.user-detail img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 3px solid #00CC99;
+    object-fit: cover;
+}
+
+.user-detail .left-profile {
+    color: white;
+    width: 50%;
+    justify-content: center;
+    display: flex;
+    padding: 10px;
+    margin-right: 5px;
+    height: 230px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px -15px #111;
+}
+
+.left-profile button{
+    margin-left: 15px;
+}
+
+.to-change-password{
+    margin-left: 17px;
+    margin-top: 10px;
+}
+
+.user-profile .header{
+    background-color: #dddddd;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.user-profile .header h3{
+    color: #aaaaaa;
+}
+
+.user-profile mat-form-field{
+   width: 100%;
+}
+
+.account-section mat-form-field{
+    width: 100%;
+}

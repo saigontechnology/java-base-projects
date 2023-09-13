@@ -1,0 +1,103 @@
+<div class="user-detail">
+    <h3>Account Information</h3>
+    <mat-divider/>
+    <mat-tab-group #tabRef>
+        <mat-tab label="Profile">
+            <div class="user-profile">
+                <div class="account-section">
+                    <div class="header"><h3>About</h3></div>
+                    <mat-grid-list cols="2" rowHeight="300px">
+                        <mat-grid-tile>
+                            <form>
+                                <mat-form-field>
+                                    <mat-label>Account Code</mat-label>
+                                    <input matInput required>
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <mat-label>Email</mat-label>
+                                    <input matInput required>
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <mat-label>Full Name</mat-label>
+                                    <input matInput required>
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <mat-label>Phone Number</mat-label>
+                                    <input matInput required>
+                                </mat-form-field>
+                            </form>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="left-profile">
+                                <div class="left-profile-child">
+                                    <div>
+                                        <img src="../../../../assets/avatar.jpeg" />
+                                    </div>
+                                    <div>
+                                        <button mat-raised-button>Chose photo</button>
+                                    </div>
+                                    <div class="to-change-password">
+                                        <a [routerLink]="['/auth/change-password']"><span>Change Password</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </div>
+                <div class="flex-parent-element">
+                    <!-- Address -->
+                    <div class="flex-child-element">
+                        <div class="account-section">
+                            <div class="header"><h3>Address</h3></div>
+                            <form>
+                                <mat-form-field>
+                                    <mat-label>Contry</mat-label>
+                                    <input matInput required>
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <mat-label>State</mat-label>
+                                    <input matInput required>
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <mat-label>Post Code</mat-label>
+                                    <input matInput required>
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <mat-label>Home</mat-label>
+                                    <input matInput required>
+                                </mat-form-field>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Delivery Address -->
+                    <div class="flex-child-element">
+                        <div class="account-section">
+                            <div class="header"><h3>Delivery Address</h3></div>
+                            <form>
+                                <mat-form-field>
+                                    <mat-label>Contry</mat-label>
+                                    <input matInput required>
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <mat-label>State</mat-label>
+                                    <input matInput required>
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <mat-label>Post Code</mat-label>
+                                    <input matInput required>
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <mat-label>Home</mat-label>
+                                    <input matInput required>
+                                </mat-form-field>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <button mat-raised-button color="primary">Update</button>
+            </div>
+        </mat-tab>
+        <mat-tab label="Authorities"></mat-tab>
+    </mat-tab-group>
+</div>

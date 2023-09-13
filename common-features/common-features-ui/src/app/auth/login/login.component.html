@@ -1,0 +1,30 @@
+<div class="auth">
+    <div class="login">
+        <h2>Login</h2>
+        <form>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput required>
+                <mat-hint align="end">examle@gmail.com</mat-hint>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" required>
+            </mat-form-field>
+            <button class="btn-login" mat-raised-button>LOGIN</button>
+        </form>
+        <div class="forgot-password">
+            <a mat-list-item routerLink="/auth/forgot-password"><span class="sidenav-section">Forgot password</span></a>
+        </div>
+        <div class="create-account">
+            <a mat-list-item routerLink="/auth/register"><span class="sidenav-section">Create account</span></a>
+        </div>
+        <div class="divider"><mat-divider/></div>
+        <div class="social">
+            <button class="btn-social" color="primary" mat-mini-fab matTooltip="Login with Facebook"><mat-icon>facebook</mat-icon></button>
+            <button class="btn-social" color="primary" mat-mini-fab matTooltip="Login with Gmail"><mat-icon>alternate_email</mat-icon></button>
+            <button class="btn-social" color="primary" mat-mini-fab matTooltip="Login with Github"><mat-icon>device_hub</mat-icon></button>
+        </div>
+        <span class="alert">User name or password is incorrect</span>
+    </div>
+</div>

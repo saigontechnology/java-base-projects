@@ -1,0 +1,17 @@
+<div class="delete-account">
+	<mat-dialog-content>
+		<div class="form-delete-account">
+			<form>
+				<mat-form-field appearance="outline">
+					<mat-label>Account Code</mat-label>
+					<input matInput required>
+				</mat-form-field>
+			</form>			
+      <span class="alert">The account {{data.name}} will be deleted. If yes please enter the account code.</span>
+		</div>
+	</mat-dialog-content>
+	<mat-dialog-actions>
+		<button mat-raised-button color="primary" mat-dialog-close="true">Delete</button>
+		<button mat-raised-button color="warn" mat-dialog-close="false">Cancel</button>
+	</mat-dialog-actions>
+</div>

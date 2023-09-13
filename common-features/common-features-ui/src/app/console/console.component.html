@@ -1,0 +1,121 @@
+<mat-sidenav-container>
+    <!-- side bar -->
+    <mat-sidenav #sidenav mode="side">
+        <div class="short-profile">
+            <div class="profile-item">
+                <button mat-mini-fab [matMenuTriggerFor]="profileMenu"><img src="../assets/avatar.jpeg"></button>
+            </div>
+            <div class="profile-item">
+                <div class="mat-title">Nhut Nguyen</div>
+            </div>
+        </div>
+        
+        <!-- profile menu -->
+        <mat-menu #profileMenu="matMenu">
+            <button mat-menu-item>Profile</button>
+            <button mat-menu-item>Logout</button>
+        </mat-menu>
+        
+        <mat-accordion>
+            <!-- user management -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <span class="sidenav-section">Account Management</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <a mat-list-item [routerLink]="['/console/users']"><span class="sidenav-section">Users</span></a>
+                    <mat-divider/>
+                    <a mat-list-item [routerLink]="['/console/roles']"><span class="sidenav-section">Roles</span></a>
+                    <mat-divider/>
+                    <a mat-list-item [routerLink]="['/console/permissions']"><span class="sidenav-section">Permisions</span></a>
+                    <mat-divider/>
+                    <a mat-list-item [routerLink]="['/console/import-data']"><span class="sidenav-section">Import Data</span></a>
+                  </mat-nav-list>
+            </mat-expansion-panel>
+
+            <!-- product management -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <span class="sidenav-section">Product Management</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <a mat-list-item routerLink="/users"><span class="sidenav-section">Categories</span></a>
+                    <mat-divider/>
+                    <a mat-list-item routerLink="/roles"><span class="sidenav-section">Products</span></a>
+                    <mat-divider/>
+                    <a mat-list-item routerLink="/roles"><span class="sidenav-section">Pricing</span></a>
+                    <mat-divider/>
+                    <a mat-list-item routerLink="/roles"><span class="sidenav-section">Discount</span></a>
+                    <mat-divider/>
+                    <a mat-list-item routerLink="/permissions"><span class="sidenav-section">Best Selling</span></a>
+                    <mat-divider/>
+                    <a mat-list-item routerLink="/permissions"><span class="sidenav-section">Close to Date</span></a>
+                    <mat-divider/>
+                    <a mat-list-item routerLink="/permissions"><span class="sidenav-section">Import Data</span></a>
+                  </mat-nav-list>       
+            </mat-expansion-panel>
+
+            <!-- payment management -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <span class="sidenav-section">Payment Management</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <a mat-list-item routerLink="/users"><span class="sidenav-section">Billings</span></a>
+                    <mat-divider/>
+                    <a mat-list-item routerLink="/roles"><span class="sidenav-section">Transactions</span></a>
+                    <mat-divider/>
+                    <a mat-list-item routerLink="/permissions"><span class="sidenav-section">Installment</span></a>
+                  </mat-nav-list>       
+            </mat-expansion-panel>
+
+            <!-- report management -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <span class="sidenav-section">Report</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <a mat-list-item routerLink="/users"><span class="sidenav-section">Statistics</span></a>
+                    <mat-divider/>
+                    <a mat-list-item routerLink="/roles"><span class="sidenav-section">Export Data</span></a>
+                  </mat-nav-list>       
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </mat-sidenav>
+
+    <!-- sidenav content -->
+    <mat-sidenav-content>
+        <mat-toolbar class="navbar">
+            <div>
+                <button mat-mini-fab color="primary" (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+            <div>
+                <span class="navbar-item">
+                    <button mat-mini-fab color="primary" [matBadge]="2" matBadgeColor="warn" [matMenuTriggerFor]="notificationsMenu">
+                        <mat-icon>notifications</mat-icon>
+                    </button>
+                </span>
+
+                <!-- notification menu -->
+                <mat-menu #notificationsMenu="matMenu">
+                    <button mat-menu-item>Notification #1</button>
+                    <button mat-menu-item>Notification #2</button>
+                </mat-menu>
+            </div>
+        </mat-toolbar>
+        <div class="outlet-content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.flex-parent-element {
+    display: flex;
+}
+  
+.flex-child-element {
+    flex: 1;
+    padding-top: 5px;
+}
+
+.flex-child-element:first-child {
+    margin-right: 20px;
+}

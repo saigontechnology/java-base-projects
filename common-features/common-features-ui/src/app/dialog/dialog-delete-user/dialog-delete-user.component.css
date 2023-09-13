@@ -1,0 +1,20 @@
+.delete-account{
+    width: 400px;
+}
+
+.form-delete-account {
+    padding: 10px;
+}
+
+.form-delete-account mat-form-field{
+    width: 100%;
+}
+
+.alert{
+    color: #FF6600;
+}
+
+.delete-account mat-dialog-actions{
+    justify-content: end;
+    right: 30px;
+}
