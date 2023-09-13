@@ -9,13 +9,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DialogAddUserComponent } from './dialog/dialog-add-user/dialog-add-user.component';
 import { DialogDeleteUserComponent } from './dialog/dialog-delete-user/dialog-delete-user.component';
+import { DialogImportUserComponent } from './dialog/dialog-import-user/dialog-import-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
     DialogAddUserComponent,
-    DialogDeleteUserComponent
+    DialogDeleteUserComponent,
+    DialogImportUserComponent
   ],
   imports: [
     BrowserModule,

@@ -31,7 +31,7 @@
     margin-top: 10px;
 }
 
-.user-profile .header{
+.user-profile .header, .user-role .header{
     background-color: #dddddd;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -40,7 +40,7 @@
     margin-bottom: 5px;
 }
 
-.user-profile .header h3{
+.user-profile .header h3, .user-role .header h3{
     color: #aaaaaa;
 }
 

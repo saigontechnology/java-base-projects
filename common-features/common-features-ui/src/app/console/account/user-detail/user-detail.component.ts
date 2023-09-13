@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent {
-
+	roles: string[] = ['customer', 'vip customer', 'golden customer','employee', 'manager'];
+    groups: string[] = ['normal', 'admin', 'suppervisor'];
 }

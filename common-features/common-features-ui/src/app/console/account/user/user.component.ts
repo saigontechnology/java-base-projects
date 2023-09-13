@@ -5,6 +5,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddUserComponent } from 'src/app/dialog/dialog-add-user/dialog-add-user.component';
 import { DialogDeleteUserComponent } from 'src/app/dialog/dialog-delete-user/dialog-delete-user.component';
+import { DialogImportUserComponent } from 'src/app/dialog/dialog-import-user/dialog-import-user.component';
 
 export interface PeriodicElement {
     userId: number;  
@@ -52,7 +53,8 @@ export class UserComponent implements AfterViewInit{
 
     constructor(
 		private dialogCreateAccount: MatDialog,
-		private dialogDeteAccount: MatDialog){
+		private dialogDeleteAccount: MatDialog,
+		private dialogImportAccount: MatDialog){
 
     }
   
@@ -74,14 +76,21 @@ export class UserComponent implements AfterViewInit{
     }
 
     openDialogCreateAccount () {
-		let dialogRef = this.dialogCreateAccount.open(DialogAddUserComponent, {data: {name: "Nhut"}});
+		let dialogRef = this.dialogCreateAccount.open(DialogAddUserComponent, {data: {name: "Nhut"}, disableClose: true});
+      	dialogRef.afterClosed().subscribe(r => {
+        	console.log(`Dialog result: ${r}`);
+      	})
+    }
+
+	openDialogImportAccount () {
+		let dialogRef = this.dialogImportAccount.open(DialogImportUserComponent, {data: {name: "Nhut"}, disableClose: true});
       	dialogRef.afterClosed().subscribe(r => {
         	console.log(`Dialog result: ${r}`);
       	})
     }
 
 	openDialogDeleteAccount () {
-		let dialogRef = this.dialogDeteAccount.open(DialogDeleteUserComponent, {data: {name: "Nhut"}});
+		let dialogRef = this.dialogDeleteAccount.open(DialogDeleteUserComponent, {data: {name: "Nhut"}, disableClose: true});
 		dialogRef.afterClosed().subscribe(r => {
 			console.log(`Dialog result: ${r}`);
 		})
