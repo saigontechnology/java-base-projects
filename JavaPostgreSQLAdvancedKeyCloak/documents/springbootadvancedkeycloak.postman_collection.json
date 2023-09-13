@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "609f091a-ccd7-42a5-b54b-646c95a08e09",
+		"name": "springbootadvancedkeycloak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "rest-get-token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "javabasekeycloak",
+							"type": "default"
+						},
+						{
+							"key": "username",
+							"value": "nhut",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "P@ssword123",
+							"type": "default"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "default"
+						},
+						{
+							"key": "client_secret",
+							"value": "BptM4xBN9vUSvaGsKzvkoGSE3PMEdpWE",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/saigontechnology/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"saigontechnology",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSUnQ3Q0t4emtScUd5Z0ExZW9fNVptc051VGpVZ243V0d1enRfVE1LN1RJIn0.eyJleHAiOjE2OTA0NzU1OTUsImlhdCI6MTY5MDQ3NTI5NSwianRpIjoiOWZlZWRjMzAtYTQwYy00MmM2LTk2YTEtZWYzOGRkOWU4ZjkzIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL3NhaWdvbnRlY2hub2xvZ3kiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMWMwOTg4M2YtZmYyMS00MmFhLWE0NmItN2JmMDc4MTYxZWViIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YWJhc2VrZXljbG9hayIsInNlc3Npb25fc3RhdGUiOiJjNjM1NGIzNC02Njg4LTRjZTktYTZiMy0yOTM4N2U2YTExMmEiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODE4MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsImRlZmF1bHQtcm9sZXMtc2FpZ29udGVjaG5vbG9neSIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImphdmFiYXNla2V5Y2xvYWsiOnsicm9sZXMiOlsicG0iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImM2MzU0YjM0LTY2ODgtNGNlOS1hNmIzLTI5Mzg3ZTZhMTEyYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZGFuaCIsImdpdmVuX25hbWUiOiIiLCJmYW1pbHlfbmFtZSI6IiJ9.avCOqgM_5miD8rdfvDIg8lv0WQ0bcu91oQgag-F26aQfAow9xTmQ9eIOgnSw_2QhA3cGTdVcPJMQKJvy2ggKgX1dzfSpAt6fEKHzTTYVdvUZOHMnL76FM6MmbfvdKKg1IeVT0kR3XS0GZ7ptLDA0PzhCf-yk6JDIIYzpdFepGWOL0huo5R0L_ImjYOSEknsSE88Psa7Rtpr2x13F_EvI2kFK4Txo_Tn1mKeubWECGbKxuNJGmNOUTQTS2jPGYsKpeE0dEy0S-fiv6rJJx4OPpvWzqOiGRrNFLEo--Lhia8ESy2zZeJuTCNcPEY__luav67Y5xBUxSKItyFicTqr1cg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productCategory\": \"Food\",\n    \"productName\": \"Cake\",\n    \"productPrice\": 500000,\n    \"productAmount\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSUnQ3Q0t4emtScUd5Z0ExZW9fNVptc051VGpVZ243V0d1enRfVE1LN1RJIn0.eyJleHAiOjE2OTA0NzU2OTgsImlhdCI6MTY5MDQ3NTM5OCwianRpIjoiZGY5OTdiYzItMTdiMi00YWI0LThmYzktMDNiOGFmMzczYzI1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL3NhaWdvbnRlY2hub2xvZ3kiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNjM1YzdiMjEtNWUzMS00NTc4LWJiZGUtN2UyMGZlYTI3MjczIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YWJhc2VrZXljbG9hayIsInNlc3Npb25fc3RhdGUiOiJkMzZmZTQxYi02M2Q0LTQ0ZmUtYjA3OC1mZjEwODY3MjQ0MTciLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODE4MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsImRlZmF1bHQtcm9sZXMtc2FpZ29udGVjaG5vbG9neSIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImphdmFiYXNla2V5Y2xvYWsiOnsicm9sZXMiOlsiZm0iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImQzNmZlNDFiLTYzZDQtNDRmZS1iMDc4LWZmMTA4NjcyNDQxNyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoibmh1dCIsImdpdmVuX25hbWUiOiIiLCJmYW1pbHlfbmFtZSI6IiJ9.PGH5_GxtCwp6l0xmjXOfV0kuhEk6ggJ7hlc9dlhOvZif2ybre4oelvN_KIGLeBj3BboBL2MSM4MsHjm9D34O5rIEsCemz5Lg0prfUj7whxOaEszVM3opi3k0VRhGiX1rDpP1ZezQ6ZE1kJbUPTFYm4ocvquxIfXEJcEo-jDBNkvS0nT2A7hfLaUC2JMQzhwu-6Vvd7ySDwuU5O1I-0BLQccSiPpDu2-uc8wKq79CEkiejkPD0Fv2_HFgZtiVqxlgfJKIXGIL7J-oXYTQXXCslZs8o8PEHsFHP6gbCM2hJ5FBU526Ro0o2UmqnOqeLV3wJiqkYdcw7itzn-Sr4nzzEg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productName\": \"Keo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/products/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"products",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSUnQ3Q0t4emtScUd5Z0ExZW9fNVptc051VGpVZ243V0d1enRfVE1LN1RJIn0.eyJleHAiOjE2OTA0NzU1OTUsImlhdCI6MTY5MDQ3NTI5NSwianRpIjoiOWZlZWRjMzAtYTQwYy00MmM2LTk2YTEtZWYzOGRkOWU4ZjkzIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL3NhaWdvbnRlY2hub2xvZ3kiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMWMwOTg4M2YtZmYyMS00MmFhLWE0NmItN2JmMDc4MTYxZWViIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YWJhc2VrZXljbG9hayIsInNlc3Npb25fc3RhdGUiOiJjNjM1NGIzNC02Njg4LTRjZTktYTZiMy0yOTM4N2U2YTExMmEiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODE4MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsImRlZmF1bHQtcm9sZXMtc2FpZ29udGVjaG5vbG9neSIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImphdmFiYXNla2V5Y2xvYWsiOnsicm9sZXMiOlsicG0iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImM2MzU0YjM0LTY2ODgtNGNlOS1hNmIzLTI5Mzg3ZTZhMTEyYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZGFuaCIsImdpdmVuX25hbWUiOiIiLCJmYW1pbHlfbmFtZSI6IiJ9.avCOqgM_5miD8rdfvDIg8lv0WQ0bcu91oQgag-F26aQfAow9xTmQ9eIOgnSw_2QhA3cGTdVcPJMQKJvy2ggKgX1dzfSpAt6fEKHzTTYVdvUZOHMnL76FM6MmbfvdKKg1IeVT0kR3XS0GZ7ptLDA0PzhCf-yk6JDIIYzpdFepGWOL0huo5R0L_ImjYOSEknsSE88Psa7Rtpr2x13F_EvI2kFK4Txo_Tn1mKeubWECGbKxuNJGmNOUTQTS2jPGYsKpeE0dEy0S-fiv6rJJx4OPpvWzqOiGRrNFLEo--Lhia8ESy2zZeJuTCNcPEY__luav67Y5xBUxSKItyFicTqr1cg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productCategory\": \"Food\",\n    \"productName\": \"rice\",\n    \"productPrice\": 500000,\n    \"productAmount\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-product-by-id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSUnQ3Q0t4emtScUd5Z0ExZW9fNVptc051VGpVZ243V0d1enRfVE1LN1RJIn0.eyJleHAiOjE2OTA0NzU1OTUsImlhdCI6MTY5MDQ3NTI5NSwianRpIjoiOWZlZWRjMzAtYTQwYy00MmM2LTk2YTEtZWYzOGRkOWU4ZjkzIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL3NhaWdvbnRlY2hub2xvZ3kiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMWMwOTg4M2YtZmYyMS00MmFhLWE0NmItN2JmMDc4MTYxZWViIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YWJhc2VrZXljbG9hayIsInNlc3Npb25fc3RhdGUiOiJjNjM1NGIzNC02Njg4LTRjZTktYTZiMy0yOTM4N2U2YTExMmEiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODE4MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsImRlZmF1bHQtcm9sZXMtc2FpZ29udGVjaG5vbG9neSIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImphdmFiYXNla2V5Y2xvYWsiOnsicm9sZXMiOlsicG0iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImM2MzU0YjM0LTY2ODgtNGNlOS1hNmIzLTI5Mzg3ZTZhMTEyYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZGFuaCIsImdpdmVuX25hbWUiOiIiLCJmYW1pbHlfbmFtZSI6IiJ9.avCOqgM_5miD8rdfvDIg8lv0WQ0bcu91oQgag-F26aQfAow9xTmQ9eIOgnSw_2QhA3cGTdVcPJMQKJvy2ggKgX1dzfSpAt6fEKHzTTYVdvUZOHMnL76FM6MmbfvdKKg1IeVT0kR3XS0GZ7ptLDA0PzhCf-yk6JDIIYzpdFepGWOL0huo5R0L_ImjYOSEknsSE88Psa7Rtpr2x13F_EvI2kFK4Txo_Tn1mKeubWECGbKxuNJGmNOUTQTS2jPGYsKpeE0dEy0S-fiv6rJJx4OPpvWzqOiGRrNFLEo--Lhia8ESy2zZeJuTCNcPEY__luav67Y5xBUxSKItyFicTqr1cg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productCategory\": \"Food\",\n    \"productName\": \"rice\",\n    \"productPrice\": 500000,\n    \"productAmount\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/products/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"products",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

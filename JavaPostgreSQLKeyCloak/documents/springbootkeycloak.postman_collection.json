@@ -1,0 +1,570 @@
+{
+	"info": {
+		"_postman_id": "ef3ed93e-b7fc-489a-885e-e997993f87d3",
+		"name": "springbootkeycloak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get-token-oauth2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "username",
+							"value": "thanh",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "token-from-keycloak",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "password_credentials",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "BptM4xBN9vUSvaGsKzvkoGSE3PMEdpWE",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://localhost:8080/auth/realms/saigontechnology/protocol/openid-connect/auth",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8181",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "P@ssword123",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "javabasekeycloak",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8080/auth/realms/saigontechnology/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/saigontechnology/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"saigontechnology",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rest-get-token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "javabasekeycloak",
+							"type": "default"
+						},
+						{
+							"key": "username",
+							"value": "khoa",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "P@ssword123",
+							"type": "default"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "default"
+						},
+						{
+							"key": "client_secret",
+							"value": "BptM4xBN9vUSvaGsKzvkoGSE3PMEdpWE",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/saigontechnology/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"saigontechnology",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSUnQ3Q0t4emtScUd5Z0ExZW9fNVptc051VGpVZ243V0d1enRfVE1LN1RJIn0.eyJleHAiOjE2OTA0MzgwNTQsImlhdCI6MTY5MDQzNzc1NCwianRpIjoiYWUwNjgyZGUtNmUzMS00NjA3LTllYjAtNWZhOTUzZmNjOWUxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL3NhaWdvbnRlY2hub2xvZ3kiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiOTZkOGFmNTktZWFhMi00NjJkLWIxMWUtOTVkZGQ0MTAwYTcwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YWJhc2VrZXljbG9hayIsInNlc3Npb25fc3RhdGUiOiJkMTM3MDBjYi05MTA3LTQxOGYtYmQ1MC0wNzgwZjFmMTY2N2QiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODE4MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJkZWZhdWx0LXJvbGVzLXNhaWdvbnRlY2hub2xvZ3kiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiJkMTM3MDBjYi05MTA3LTQxOGYtYmQ1MC0wNzgwZjFmMTY2N2QiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6Imtob2EiLCJnaXZlbl9uYW1lIjoiIiwiZmFtaWx5X25hbWUiOiIifQ.XzMndlL8pC7jEsVgdsdxGZ9U-K0aQifSMLiPYCh8HnqSnm26GkIVt8AiPSD0UGbYpWq7m-otFsSQTeKPKhYMagN9m8PTEP20EyWpaRm5WsOQ4InIJlX4lUxrERgbOR77kypW4yNdRSPHkQmlAE-8I6O1hkUQ2wHs2VZ0h_sO_r6GLMD2uYYNXavueGY7K5oC9XbpHSYNzKA8qxGkjQpVqvzt1AsOO-GLY_W3ADFTWi8AhQQxAZoY3G_ZyPU7G13NIGpTD7_hCH2OmdXE29Z0EiKiW1JKVYvkQCSGSA9I1uC_JhBTbsmCOJ35PX09L2ymGXUfcNjW62xvT9RqCyFwmQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productCategory\": \"Food\",\n    \"productName\": \"rice\",\n    \"productPrice\": 500000,\n    \"productAmount\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSUnQ3Q0t4emtScUd5Z0ExZW9fNVptc051VGpVZ243V0d1enRfVE1LN1RJIn0.eyJleHAiOjE2OTA0MzgwNTQsImlhdCI6MTY5MDQzNzc1NCwianRpIjoiYWUwNjgyZGUtNmUzMS00NjA3LTllYjAtNWZhOTUzZmNjOWUxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL3NhaWdvbnRlY2hub2xvZ3kiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiOTZkOGFmNTktZWFhMi00NjJkLWIxMWUtOTVkZGQ0MTAwYTcwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YWJhc2VrZXljbG9hayIsInNlc3Npb25fc3RhdGUiOiJkMTM3MDBjYi05MTA3LTQxOGYtYmQ1MC0wNzgwZjFmMTY2N2QiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODE4MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJkZWZhdWx0LXJvbGVzLXNhaWdvbnRlY2hub2xvZ3kiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiJkMTM3MDBjYi05MTA3LTQxOGYtYmQ1MC0wNzgwZjFmMTY2N2QiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6Imtob2EiLCJnaXZlbl9uYW1lIjoiIiwiZmFtaWx5X25hbWUiOiIifQ.XzMndlL8pC7jEsVgdsdxGZ9U-K0aQifSMLiPYCh8HnqSnm26GkIVt8AiPSD0UGbYpWq7m-otFsSQTeKPKhYMagN9m8PTEP20EyWpaRm5WsOQ4InIJlX4lUxrERgbOR77kypW4yNdRSPHkQmlAE-8I6O1hkUQ2wHs2VZ0h_sO_r6GLMD2uYYNXavueGY7K5oC9XbpHSYNzKA8qxGkjQpVqvzt1AsOO-GLY_W3ADFTWi8AhQQxAZoY3G_ZyPU7G13NIGpTD7_hCH2OmdXE29Z0EiKiW1JKVYvkQCSGSA9I1uC_JhBTbsmCOJ35PX09L2ymGXUfcNjW62xvT9RqCyFwmQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productName\": \"nuddle\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSUnQ3Q0t4emtScUd5Z0ExZW9fNVptc051VGpVZ243V0d1enRfVE1LN1RJIn0.eyJleHAiOjE2OTA0MzgwNTQsImlhdCI6MTY5MDQzNzc1NCwianRpIjoiYWUwNjgyZGUtNmUzMS00NjA3LTllYjAtNWZhOTUzZmNjOWUxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL3NhaWdvbnRlY2hub2xvZ3kiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiOTZkOGFmNTktZWFhMi00NjJkLWIxMWUtOTVkZGQ0MTAwYTcwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YWJhc2VrZXljbG9hayIsInNlc3Npb25fc3RhdGUiOiJkMTM3MDBjYi05MTA3LTQxOGYtYmQ1MC0wNzgwZjFmMTY2N2QiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODE4MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJkZWZhdWx0LXJvbGVzLXNhaWdvbnRlY2hub2xvZ3kiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiJkMTM3MDBjYi05MTA3LTQxOGYtYmQ1MC0wNzgwZjFmMTY2N2QiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6Imtob2EiLCJnaXZlbl9uYW1lIjoiIiwiZmFtaWx5X25hbWUiOiIifQ.XzMndlL8pC7jEsVgdsdxGZ9U-K0aQifSMLiPYCh8HnqSnm26GkIVt8AiPSD0UGbYpWq7m-otFsSQTeKPKhYMagN9m8PTEP20EyWpaRm5WsOQ4InIJlX4lUxrERgbOR77kypW4yNdRSPHkQmlAE-8I6O1hkUQ2wHs2VZ0h_sO_r6GLMD2uYYNXavueGY7K5oC9XbpHSYNzKA8qxGkjQpVqvzt1AsOO-GLY_W3ADFTWi8AhQQxAZoY3G_ZyPU7G13NIGpTD7_hCH2OmdXE29Z0EiKiW1JKVYvkQCSGSA9I1uC_JhBTbsmCOJ35PX09L2ymGXUfcNjW62xvT9RqCyFwmQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productCategory\": \"Food\",\n    \"productName\": \"rice\",\n    \"productPrice\": 500000,\n    \"productAmount\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-product-by-id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSUnQ3Q0t4emtScUd5Z0ExZW9fNVptc051VGpVZ243V0d1enRfVE1LN1RJIn0.eyJleHAiOjE2OTA0MzgwNTQsImlhdCI6MTY5MDQzNzc1NCwianRpIjoiYWUwNjgyZGUtNmUzMS00NjA3LTllYjAtNWZhOTUzZmNjOWUxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL3NhaWdvbnRlY2hub2xvZ3kiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiOTZkOGFmNTktZWFhMi00NjJkLWIxMWUtOTVkZGQ0MTAwYTcwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YWJhc2VrZXljbG9hayIsInNlc3Npb25fc3RhdGUiOiJkMTM3MDBjYi05MTA3LTQxOGYtYmQ1MC0wNzgwZjFmMTY2N2QiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODE4MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJkZWZhdWx0LXJvbGVzLXNhaWdvbnRlY2hub2xvZ3kiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiJkMTM3MDBjYi05MTA3LTQxOGYtYmQ1MC0wNzgwZjFmMTY2N2QiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6Imtob2EiLCJnaXZlbl9uYW1lIjoiIiwiZmFtaWx5X25hbWUiOiIifQ.XzMndlL8pC7jEsVgdsdxGZ9U-K0aQifSMLiPYCh8HnqSnm26GkIVt8AiPSD0UGbYpWq7m-otFsSQTeKPKhYMagN9m8PTEP20EyWpaRm5WsOQ4InIJlX4lUxrERgbOR77kypW4yNdRSPHkQmlAE-8I6O1hkUQ2wHs2VZ0h_sO_r6GLMD2uYYNXavueGY7K5oC9XbpHSYNzKA8qxGkjQpVqvzt1AsOO-GLY_W3ADFTWi8AhQQxAZoY3G_ZyPU7G13NIGpTD7_hCH2OmdXE29Z0EiKiW1JKVYvkQCSGSA9I1uC_JhBTbsmCOJ35PX09L2ymGXUfcNjW62xvT9RqCyFwmQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productCategory\": \"Food\",\n    \"productName\": \"rice\",\n    \"productPrice\": 500000,\n    \"productAmount\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-keycloak-configuration",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"f1\",\n    \"lastName\": \"l1\",\n    \"email\": \"e1@gmail.com\",\n    \"password\": \"abcd@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/saigontechnology/.well-known/openid-configuration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"saigontechnology",
+						".well-known",
+						"openid-configuration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"fu3\",\n    \"lastName\": \"lu3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users/64bf53557e0c8062c43a144f",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"64bf53557e0c8062c43a144f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8181/api/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-user-by-id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"f2\",\n    \"lastName\": \"l2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8181/api/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
