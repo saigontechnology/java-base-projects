@@ -15,3 +15,29 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .flex-child-element:first-child {
     margin-right: 20px;
 }
+
+/* css for dialog */
+.dialog-container{
+    width: 400px;
+}
+
+.dialog-form {
+    padding: 10px;
+}
+
+.dialog-form mat-form-field{
+    width: 100%;
+}
+
+.alert{
+    color: #FF6600;
+}
+
+.dialog-container h2{
+    text-align: center;
+}
+
+.dialog-container mat-dialog-actions{
+    justify-content: end;
+    right: 30px;
+}

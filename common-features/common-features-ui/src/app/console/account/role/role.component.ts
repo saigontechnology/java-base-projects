@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogAddRoleComponent } from 'src/app/dialog/dialog-add-role/dialog-add-role.component';
 import { DialogDeleteUserComponent } from 'src/app/dialog/dialog-delete-user/dialog-delete-user.component';
 import { DialogImportUserComponent } from 'src/app/dialog/dialog-import-user/dialog-import-user.component';
+import { DialogImportRoleComponent } from 'src/app/dialog/dialog-import-role/dialog-import-role.component';
 
 export interface RoleElement {
     roleId: number;  
@@ -37,7 +38,7 @@ export class RoleComponent implements AfterViewInit {
     constructor(
 		private dialogCreateRole: MatDialog,
 		private dialogDeleteAccount: MatDialog,
-		private dialogImportAccount: MatDialog){
+		private dialogImportRole: MatDialog){
 
     }
   
@@ -65,8 +66,8 @@ export class RoleComponent implements AfterViewInit {
       	})
     }
 
-	openDialogImportAccount () {
-		let dialogRef = this.dialogImportAccount.open(DialogImportUserComponent, {data: {name: "Nhut"}, disableClose: true});
+	openDialogImportRole () {
+		let dialogRef = this.dialogImportRole.open(DialogImportRoleComponent, {data: {name: "Nhut"}, disableClose: true});
       	dialogRef.afterClosed().subscribe(r => {
         	console.log(`Dialog result: ${r}`);
       	})

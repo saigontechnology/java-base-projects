@@ -14,6 +14,7 @@ import { DialogAddUserComponent } from './dialog/dialog-add-user/dialog-add-user
 import { DialogDeleteUserComponent } from './dialog/dialog-delete-user/dialog-delete-user.component';
 import { DialogImportUserComponent } from './dialog/dialog-import-user/dialog-import-user.component';
 import { DialogAddRoleComponent } from './dialog/dialog-add-role/dialog-add-role.component';
+import { DialogImportRoleComponent } from './dialog/dialog-import-role/dialog-import-role.component';
 
 const routes: Routes = [
     {path:'', redirectTo:'/console', pathMatch:'full'},
@@ -54,4 +55,5 @@ export const routingComponents = [
     DialogDeleteUserComponent,
     DialogImportUserComponent,
     DialogAddRoleComponent,
+    DialogImportRoleComponent
 ]
