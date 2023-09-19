@@ -1,0 +1,22 @@
+<div class="create-account">
+	<h2 mat-dialog-title>Create New Role</h2>
+	<mat-dialog-content>
+		<div class="form-create-account">
+			<form>
+				<mat-form-field appearance="outline">
+					<mat-label>Role Name</mat-label>
+					<input matInput required>
+				</mat-form-field>
+				<mat-form-field appearance="outline">
+					<mat-label>Description</mat-label>
+					<input matInput>
+				</mat-form-field>
+			</form>
+			<span class="alert">Hi {{data.name}}. You will be added to database</span>
+		</div>
+	</mat-dialog-content>
+	<mat-dialog-actions>
+		<button mat-raised-button color="primary" mat-dialog-close="true">Create</button>
+		<button mat-raised-button color="warn" mat-dialog-close="false">Cancel</button>
+	</mat-dialog-actions>
+</div>

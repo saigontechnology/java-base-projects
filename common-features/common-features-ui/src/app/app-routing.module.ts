@@ -10,6 +10,11 @@ import { ConsoleComponent } from './console/console.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserDetailComponent } from './console/account/user-detail/user-detail.component';
 
+import { DialogAddUserComponent } from './dialog/dialog-add-user/dialog-add-user.component';
+import { DialogDeleteUserComponent } from './dialog/dialog-delete-user/dialog-delete-user.component';
+import { DialogImportUserComponent } from './dialog/dialog-import-user/dialog-import-user.component';
+import { DialogAddRoleComponent } from './dialog/dialog-add-role/dialog-add-role.component';
+
 const routes: Routes = [
     {path:'', redirectTo:'/console', pathMatch:'full'},
 
@@ -44,5 +49,9 @@ export const routingComponents = [
     ChangePasswordComponent,
     ForgotPasswordComponent,
     PageNotFoundComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    DialogAddUserComponent,
+    DialogDeleteUserComponent,
+    DialogImportUserComponent,
+    DialogAddRoleComponent,
 ]

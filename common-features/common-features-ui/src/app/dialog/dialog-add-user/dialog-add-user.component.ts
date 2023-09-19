@@ -15,5 +15,4 @@ export class DialogAddUserComponent implements OnInit {
     ngOnInit(): void {
         
     }
-
 }
