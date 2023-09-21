@@ -16,6 +16,7 @@ import { DialogImportUserComponent } from './dialog/dialog-import-user/dialog-im
 import { DialogAddRoleComponent } from './dialog/dialog-add-role/dialog-add-role.component';
 import { DialogImportRoleComponent } from './dialog/dialog-import-role/dialog-import-role.component';
 import { DialogDeleteRoleComponent } from './dialog/dialog-delete-role/dialog-delete-role.component';
+import { RoleDetailComponent } from './console/account/role-detail/role-detail.component';
 
 const routes: Routes = [
     {path:'', redirectTo:'/console', pathMatch:'full'},
@@ -26,7 +27,8 @@ const routes: Routes = [
         children: [
             { path: "users", component: UserComponent},
             { path: "users/:id", component: UserDetailComponent},
-            { path: "roles", component: RoleComponent}
+            { path: "roles", component: RoleComponent},
+            { path: "roles/:id", component: RoleDetailComponent}
         ]
     },
     {path: "auth/login", component: LoginComponent},
@@ -57,5 +59,6 @@ export const routingComponents = [
     DialogImportUserComponent,
     DialogAddRoleComponent,
     DialogImportRoleComponent,
-    DialogDeleteRoleComponent
+    DialogDeleteRoleComponent,
+    RoleDetailComponent
 ]

@@ -18,7 +18,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule,
+    FormsModule, 
     ReactiveFormsModule,
     ScrollingModule,
   ],

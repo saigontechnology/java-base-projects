@@ -16,7 +16,7 @@
 		<ng-container matColumnDef="roleId">
 			<th mat-header-cell *matHeaderCellDef> Role Id</th>
 			<td mat-cell *matCellDef="let element">
-				<a mat-list-item [routerLink]="['/console/users/', element.roleId]">
+				<a mat-list-item [routerLink]="['/console/roles/', element.roleId]">
 					<span class="sidenav-section">{{element.roleId}}</span>
 				</a>
 			</td>

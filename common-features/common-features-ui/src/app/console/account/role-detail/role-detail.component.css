@@ -1,0 +1,16 @@
+.role-profile .header {
+    background-color: #dddddd;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.role-profile .header h3{
+    color: #aaaaaa;
+}
+
+.role-profile mat-form-field{
+   width: 100%;
+}

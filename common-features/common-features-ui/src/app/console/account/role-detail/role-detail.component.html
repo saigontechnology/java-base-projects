@@ -1,0 +1,32 @@
+<div class="role-detail">
+    <h3>Role Information</h3>
+    <mat-divider/>
+    <div class="role-profile">
+        <div class="flex-parent-element">
+            <!-- Roles -->
+            <div class="flex-child-element">
+                <div class="role-section">
+                    <div class="header"><h3>Role</h3></div>
+                    <form>
+                        <mat-form-field>
+                            <mat-label>Read</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                    </form>
+                </div>
+            </div>
+            <!-- Permission -->
+            <div class="flex-child-element">
+                <div class="account-section">
+                    <div class="header"><h3>Permission</h3></div>
+                    <mat-selection-list #shoes>
+                        <mat-list-option *ngFor="let permission of permissions">
+                        {{permission}}
+                        </mat-list-option>
+                    </mat-selection-list>
+                </div>
+            </div>
+        </div>
+        <button mat-raised-button color="primary">Save</button>
+    </div>
+</div>
