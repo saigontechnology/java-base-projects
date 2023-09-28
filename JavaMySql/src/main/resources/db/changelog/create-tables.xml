@@ -22,12 +22,6 @@
             </column>
         </createTable>
 
-<!--        <createSequence sequenceName="user_seq"-->
-<!--                        incrementBy="1"-->
-<!--                        maxValue="1000"-->
-<!--                        minValue="1"-->
-<!--                        startValue="1"/>-->
-        <!-- end users table -->
         <!-- roles table -->
         <createTable tableName="roles">
             <column name="id" type="bigint" autoIncrement="true">
@@ -38,12 +32,6 @@
             </column>
         </createTable>
 
-<!--        <createSequence sequenceName="role_seq"-->
-<!--                        incrementBy="1"-->
-<!--                        maxValue="1000"-->
-<!--                        minValue="1"-->
-<!--                        startValue="1"/>-->
-        <!-- end roles table -->
         <!-- users-roles table -->
         <createTable tableName="users_roles">
             <column name="id" type="bigint" autoIncrement="true">
@@ -57,12 +45,6 @@
             </column>
         </createTable>
 
-<!--        <createSequence sequenceName="user_role_seq"-->
-<!--                        incrementBy="1"-->
-<!--                        maxValue="1000"-->
-<!--                        minValue="1"-->
-<!--                        startValue="1"/>-->
-
         <addForeignKeyConstraint baseColumnNames="user_id"
                                  baseTableName="users_roles"
                                  constraintName="fk_users_roles_users_id"
@@ -74,6 +56,15 @@
                                  constraintName="fk_users_roles_roles_id"
                                  referencedColumnNames="id"
                                  referencedTableName="roles"/>
-        <!-- end users-roles table -->
+
+        <!-- products table -->
+        <createTable tableName="products">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)" />
+            <column name="amount" type="int" />
+        </createTable>
+
     </changeSet>
 </databaseChangeLog>
