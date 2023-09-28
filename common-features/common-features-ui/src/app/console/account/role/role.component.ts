@@ -4,7 +4,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddRoleComponent } from 'src/app/dialog/dialog-add-role/dialog-add-role.component';
-import { DialogDeleteUserComponent } from 'src/app/dialog/dialog-delete-user/dialog-delete-user.component';
 import { DialogImportRoleComponent } from 'src/app/dialog/dialog-import-role/dialog-import-role.component';
 import { DialogDeleteRoleComponent } from 'src/app/dialog/dialog-delete-role/dialog-delete-role.component';
 
