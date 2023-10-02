@@ -3,9 +3,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogAddPermissionComponent } from 'src/app/dialog/dialog-add-permission/dialog-add-permission.component';
-import { DialogImportPermissionComponent } from 'src/app/dialog/dialog-import-permission/dialog-import-permission.component';
-import { DialogDeletePermissionComponent } from 'src/app/dialog/dialog-delete-permission/dialog-delete-permission.component';
+import { DialogAddPermissionComponent } from 'src/app/dialog/permission/dialog-add-permission/dialog-add-permission.component';
+import { DialogImportPermissionComponent } from 'src/app/dialog/permission/dialog-import-permission/dialog-import-permission.component';
+import { DialogDeletePermissionComponent } from 'src/app/dialog/permission/dialog-delete-permission/dialog-delete-permission.component';
 
 export interface PermissionElement {
   permissionId: number;  

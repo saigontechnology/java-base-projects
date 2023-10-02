@@ -3,9 +3,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogAddRoleComponent } from 'src/app/dialog/dialog-add-role/dialog-add-role.component';
-import { DialogImportRoleComponent } from 'src/app/dialog/dialog-import-role/dialog-import-role.component';
-import { DialogDeleteRoleComponent } from 'src/app/dialog/dialog-delete-role/dialog-delete-role.component';
+import { DialogAddRoleComponent } from 'src/app/dialog/role/dialog-add-role/dialog-add-role.component';
+import { DialogImportRoleComponent } from 'src/app/dialog/role/dialog-import-role/dialog-import-role.component';
+import { DialogDeleteRoleComponent } from 'src/app/dialog/role/dialog-delete-role/dialog-delete-role.component';
 
 export interface RoleElement {
     roleId: number;  

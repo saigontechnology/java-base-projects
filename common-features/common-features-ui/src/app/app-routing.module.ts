@@ -10,18 +10,23 @@ import { ConsoleComponent } from './console/console.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserDetailComponent } from './console/account/user-detail/user-detail.component';
 
-import { DialogAddUserComponent } from './dialog/dialog-add-user/dialog-add-user.component';
-import { DialogDeleteUserComponent } from './dialog/dialog-delete-user/dialog-delete-user.component';
-import { DialogImportUserComponent } from './dialog/dialog-import-user/dialog-import-user.component';
-import { DialogAddRoleComponent } from './dialog/dialog-add-role/dialog-add-role.component';
-import { DialogImportRoleComponent } from './dialog/dialog-import-role/dialog-import-role.component';
-import { DialogDeleteRoleComponent } from './dialog/dialog-delete-role/dialog-delete-role.component';
+import { DialogAddUserComponent } from './dialog/user/dialog-add-user/dialog-add-user.component';
+import { DialogDeleteUserComponent } from './dialog/user/dialog-delete-user/dialog-delete-user.component';
+import { DialogImportUserComponent } from './dialog/user/dialog-import-user/dialog-import-user.component';
+import { DialogAddRoleComponent } from './dialog/role/dialog-add-role/dialog-add-role.component';
+import { DialogImportRoleComponent } from './dialog/role/dialog-import-role/dialog-import-role.component';
+import { DialogDeleteRoleComponent } from './dialog/role/dialog-delete-role/dialog-delete-role.component';
 import { RoleDetailComponent } from './console/account/role-detail/role-detail.component';
 import { PermissionComponent } from './console/account/permission/permission.component';
 import { PermissionDetailComponent } from './console/account/permission-detail/permission-detail.component';
-import { DialogAddPermissionComponent } from './dialog/dialog-add-permission/dialog-add-permission.component';
-import { DialogImportPermissionComponent } from './dialog/dialog-import-permission/dialog-import-permission.component';
-import { DialogDeletePermissionComponent } from './dialog/dialog-delete-permission/dialog-delete-permission.component';
+import { DialogAddPermissionComponent } from './dialog/permission/dialog-add-permission/dialog-add-permission.component';
+import { DialogImportPermissionComponent } from './dialog/permission/dialog-import-permission/dialog-import-permission.component';
+import { DialogDeletePermissionComponent } from './dialog/permission/dialog-delete-permission/dialog-delete-permission.component';
+import { CategoryComponent } from './console/categories/category/category.component';
+import { CategoryDetailComponent } from './console/categories/category-detail/category-detail.component';
+import { DialogAddCategoryComponent } from './dialog/category/dialog-add-category/dialog-add-category.component';
+import { DialogImportCategoryComponent } from './dialog/category/dialog-import-category/dialog-import-category.component';
+import { DialogDeleteCategoryComponent } from './dialog/category/dialog-delete-category/dialog-delete-category.component';
 
 const routes: Routes = [
     {path:'', redirectTo:'/console', pathMatch:'full'},
@@ -36,6 +41,8 @@ const routes: Routes = [
             { path: "roles/:id", component: RoleDetailComponent},
             { path: "permissions", component: PermissionComponent},
             { path: "permissions/:id", component: PermissionDetailComponent},
+            { path: "categories", component: CategoryComponent},
+            { path: "categories/:id", component: CategoryDetailComponent},
         ]
     },
     {path: "auth/login", component: LoginComponent},
@@ -72,5 +79,10 @@ export const routingComponents = [
     DialogAddPermissionComponent,
     DialogImportPermissionComponent,
     DialogDeletePermissionComponent,
-    PermissionDetailComponent
+    PermissionDetailComponent,
+    CategoryComponent,
+    CategoryDetailComponent,
+    DialogAddCategoryComponent,
+    DialogImportCategoryComponent,
+    DialogDeleteCategoryComponent,
 ]

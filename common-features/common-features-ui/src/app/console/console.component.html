@@ -33,6 +33,18 @@
                   </mat-nav-list>
             </mat-expansion-panel>
 
+            <!-- category management -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <span class="sidenav-section">Category Management</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <a mat-list-item [routerLink]="['/console/categories']"><span class="sidenav-section">Categories</span></a>
+                  </mat-nav-list>       
+            </mat-expansion-panel>
+
             <!-- product management -->
             <mat-expansion-panel>
                 <mat-expansion-panel-header>
@@ -41,7 +53,6 @@
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-nav-list>
-                    <a mat-list-item routerLink="/users"><span class="sidenav-section">Categories</span></a>
                     <mat-divider/>
                     <a mat-list-item routerLink="/roles"><span class="sidenav-section">Products</span></a>
                     <mat-divider/>

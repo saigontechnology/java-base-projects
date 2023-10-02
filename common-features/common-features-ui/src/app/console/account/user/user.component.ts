@@ -3,9 +3,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogAddUserComponent } from 'src/app/dialog/dialog-add-user/dialog-add-user.component';
-import { DialogDeleteUserComponent } from 'src/app/dialog/dialog-delete-user/dialog-delete-user.component';
-import { DialogImportUserComponent } from 'src/app/dialog/dialog-import-user/dialog-import-user.component';
+import { DialogAddUserComponent } from 'src/app/dialog/user/dialog-add-user/dialog-add-user.component';
+import { DialogDeleteUserComponent } from 'src/app/dialog/user/dialog-delete-user/dialog-delete-user.component';
+import { DialogImportUserComponent } from 'src/app/dialog/user/dialog-import-user/dialog-import-user.component';
 
 export interface PeriodicElement {
     userId: number;  
