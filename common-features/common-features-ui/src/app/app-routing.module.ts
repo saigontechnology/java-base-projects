@@ -18,7 +18,10 @@ import { DialogImportRoleComponent } from './dialog/dialog-import-role/dialog-im
 import { DialogDeleteRoleComponent } from './dialog/dialog-delete-role/dialog-delete-role.component';
 import { RoleDetailComponent } from './console/account/role-detail/role-detail.component';
 import { PermissionComponent } from './console/account/permission/permission.component';
-
+import { PermissionDetailComponent } from './console/account/permission-detail/permission-detail.component';
+import { DialogAddPermissionComponent } from './dialog/dialog-add-permission/dialog-add-permission.component';
+import { DialogImportPermissionComponent } from './dialog/dialog-import-permission/dialog-import-permission.component';
+import { DialogDeletePermissionComponent } from './dialog/dialog-delete-permission/dialog-delete-permission.component';
 
 const routes: Routes = [
     {path:'', redirectTo:'/console', pathMatch:'full'},
@@ -32,6 +35,7 @@ const routes: Routes = [
             { path: "roles", component: RoleComponent},
             { path: "roles/:id", component: RoleDetailComponent},
             { path: "permissions", component: PermissionComponent},
+            { path: "permissions/:id", component: PermissionDetailComponent},
         ]
     },
     {path: "auth/login", component: LoginComponent},
@@ -64,5 +68,9 @@ export const routingComponents = [
     DialogImportRoleComponent,
     DialogDeleteRoleComponent,
     RoleDetailComponent,
-    PermissionComponent
+    PermissionComponent,
+    DialogAddPermissionComponent,
+    DialogImportPermissionComponent,
+    DialogDeletePermissionComponent,
+    PermissionDetailComponent
 ]
