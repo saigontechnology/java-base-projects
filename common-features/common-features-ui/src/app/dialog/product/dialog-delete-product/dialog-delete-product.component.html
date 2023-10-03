@@ -1,0 +1,18 @@
+<div class="dialog-container">
+	<h2 mat-dialog-title>Delete Product</h2>
+	<mat-dialog-content>
+		<div class="dialog-form">
+			<form>
+				<mat-form-field appearance="outline">
+					<mat-label>Product Name</mat-label>
+					<input matInput required>
+				</mat-form-field>
+			</form>			
+      <span class="alert">The account {{data.name}} will be deleted. If yes please enter the account code.</span>
+		</div>
+	</mat-dialog-content>
+	<mat-dialog-actions>
+		<button mat-raised-button color="primary" mat-dialog-close="true">Delete</button>
+		<button mat-raised-button color="warn" mat-dialog-close="false">Cancel</button>
+	</mat-dialog-actions>
+</div>

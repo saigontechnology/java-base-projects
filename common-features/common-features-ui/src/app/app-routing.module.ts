@@ -29,6 +29,8 @@ import { DialogImportCategoryComponent } from './dialog/category/dialog-import-c
 import { DialogDeleteCategoryComponent } from './dialog/category/dialog-delete-category/dialog-delete-category.component';
 import { ProductComponent } from './console/products/product/product.component';
 import { ProductDetailComponent } from './console/products/product-detail/product-detail.component';
+import { DialogDeleteProductComponent } from './dialog/product/dialog-delete-product/dialog-delete-product.component';
+import { DialogImportProductComponent } from './dialog/product/dialog-import-product/dialog-import-product.component';
 
 const routes: Routes = [
     {path:'', redirectTo:'/console', pathMatch:'full'},
@@ -47,6 +49,7 @@ const routes: Routes = [
             { path: "categories/:id", component: CategoryDetailComponent},
             { path: "products", component: ProductComponent},
             { path: "products/:id", component: ProductDetailComponent},
+            { path: "products-detail", component: ProductDetailComponent},
         ]
     },
     {path: "auth/login", component: LoginComponent},
@@ -91,4 +94,6 @@ export const routingComponents = [
     DialogDeleteCategoryComponent,
     ProductComponent,
     ProductDetailComponent,
+    DialogDeleteProductComponent,
+    DialogImportProductComponent,
 ]
