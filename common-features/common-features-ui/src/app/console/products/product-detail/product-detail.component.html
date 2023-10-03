@@ -1,0 +1,108 @@
+<div class="product-detail">
+    <h3>Product Detail</h3>
+    <mat-divider/>
+    <div class="product-profile">
+        <div class="flex-parent-element">
+            <!-- Product -->
+            <div class="flex-child-element">
+                <div class="product-section">
+                    <div class="header"><h3>Required Information</h3></div>
+                    <form>
+                        <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Category</mat-label>
+                            <mat-select>
+                                <mat-option *ngFor="let food of foods" [value]="food.value">
+                                    {{food.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>importPrice</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Selling Price</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Amount</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>publishedDate</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>expiredDate</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Size</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Color</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Description</mat-label>
+                            <textarea matInput required></textarea>
+                        </mat-form-field>
+                    </form>
+                </div>
+            </div>
+            <!-- Product Images -->
+            <div class="flex-child-element">
+                <div class="product-section">
+                    <div class="header"><h3>Product Images</h3></div>
+                    <div class="left-profile-child">
+                        <div>
+                            <img src="../../../../assets/avatar.jpeg" />
+                        </div>
+                    </div>
+                    <ul>
+                        <li>
+                            <div>
+                                <img class="detailed-img" src="../../../../assets/avatar.jpeg" />
+                                <button mat-raised-button color="warn"><mat-icon>delete</mat-icon>Delete</button>
+                            </div>                            
+                        </li>
+                        <li>
+                            <div>
+                                <img class="detailed-img" src="../../../../assets/avatar.jpeg" />
+                                <button mat-raised-button color="warn"><mat-icon>delete</mat-icon>Delete</button>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img class="detailed-img" src="../../../../assets/avatar.jpeg" />
+                                <button mat-raised-button color="warn"><mat-icon>delete</mat-icon>Delete</button>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img class="detailed-img" src="../../../../assets/avatar.jpeg" />
+                                <button mat-raised-button color="warn"><mat-icon>delete</mat-icon>Delete</button>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                               <img class="detailed-img" src="../../../../assets/avatar.jpeg" />
+                               <button mat-raised-button color="warn"><mat-icon>delete</mat-icon>Delete</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <mat-divider/>
+                    <input type="file" multiple>
+                </div>
+            </div>
+        </div>
+        <button mat-raised-button color="primary">Save</button>
+        <button mat-raised-button color="warn">Pricing</button>
+        <button mat-raised-button color="warn">Discount</button>
+    </div>
+</div>

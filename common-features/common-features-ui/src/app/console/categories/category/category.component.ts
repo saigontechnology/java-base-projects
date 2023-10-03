@@ -3,8 +3,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogImportPermissionComponent } from 'src/app/dialog/permission/dialog-import-permission/dialog-import-permission.component';
-import { DialogDeletePermissionComponent } from 'src/app/dialog/permission/dialog-delete-permission/dialog-delete-permission.component';
 import { DialogAddCategoryComponent } from 'src/app/dialog/category/dialog-add-category/dialog-add-category.component';
 import { DialogImportCategoryComponent } from 'src/app/dialog/category/dialog-import-category/dialog-import-category.component';
 import { DialogDeleteCategoryComponent } from 'src/app/dialog/category/dialog-delete-category/dialog-delete-category.component';

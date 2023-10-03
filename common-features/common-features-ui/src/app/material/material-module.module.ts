@@ -18,6 +18,8 @@ import { MatCheckboxModule }  from '@angular/material/checkbox'
 import { MatGridListModule }  from '@angular/material/grid-list'
 import { MatDialogModule }  from '@angular/material/dialog'
 import { MatTabsModule }  from '@angular/material/tabs'
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 const MaterialComponents = [
   MatSidenavModule,
@@ -37,7 +39,9 @@ const MaterialComponents = [
   MatCheckboxModule,
   MatGridListModule,
   MatDialogModule,
-  MatTabsModule
+  MatTabsModule,
+  MatSelectModule,
+  MatFormFieldModule
 ]
 
 @NgModule({
