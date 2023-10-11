@@ -7,29 +7,31 @@
         <div class="col col-md-7">
             <div class="row" style="position: relative;">
                 <img src='content/images/macbook-large.png' width="100%" class="img-fluid">
-                <a class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;">+</a>
+                <button mat-flat-button class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;;">+</button>
+                <!-- <a class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;">+</a> -->
             </div>
             <div class="row">
                 <ul class="list-inline list-unstyled d-flex justify-content-center">
                     <li class="list-inline-item" style="position: relative;">
                         <img src='content/images/macbook.png' width="100px" class="img-fluid">
-                        <a class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;">+</a>
+                        <button mat-flat-button class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;">+</button>
+                        <!-- <a class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;">+</a> -->
                     </li>
                     <li class="list-inline-item" style="position: relative;">
                         <img src='content/images/macbook.png' width="100px" class="img-fluid">
-                        <a class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;">+</a>
+                        <button mat-flat-button class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;">+</button>
                     </li>
                     <li class="list-inline-item" style="position: relative;">
                         <img src='content/images/macbook.png' width="100px" class="img-fluid">
-                        <a class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;">+</a>
+                        <button mat-flat-button class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;">+</button>
                     </li>
                     <li class="list-inline-item" style="position: relative;">
                         <img src='content/images/macbook.png' width="100px" class="img-fluid">
-                        <a class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;">+</a>
+                        <button mat-flat-button class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;">+</button>
                     </li>
                     <li class="list-inline-item" style="position: relative;">
                         <img src='content/images/macbook.png' width="100px" class="img-fluid">
-                        <a class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;">+</a>
+                        <button mat-flat-button class="text-decoration-none my-center-btn text-center" style="width: 70px; height: 25px;">+</button>
                     </li>
                 </ul>
             </div>
@@ -56,26 +58,40 @@
                     <div class="row">
                         <label for="staticEmail" class="col-sm-6 col-form-label">Bid Increment (VND)</label>
                         <div class="col-sm-6">
-                          <input type="text" class="form-control-plaintext" id="staticEmail" value="">
+                          <!-- <input type="text" class="form-control-plaintext" id="staticEmail" value=""> -->
+                            <mat-form-field style="width: 100%;">
+                                <mat-label></mat-label>
+                                <input matInput placeholder="1.000.000" value="">
+                            </mat-form-field>
                         </div>
                     </div>
                     <div class="row">
                         <label for="staticEmail" class="col-sm-6 col-form-label">Start at</label>
                         <div class="col-sm-6">
-                          <input type="text" class="form-control-plaintext" id="staticEmail" value="">
+                          <!-- <input type="text" class="form-control-plaintext" id="staticEmail" value=""> -->
+                            <mat-form-field style="width: 100%;">
+                                <mat-label></mat-label>
+                                <input matInput placeholder="" value="">
+                            </mat-form-field>
                         </div>
                     </div>
                     <div class="row">
                         <label for="staticEmail" class="col-sm-6 col-form-label">End in</label>
                         <div class="col-sm-6">
-                          <input type="text" class="form-control-plaintext" id="staticEmail" value="">
+                          <!-- <input type="text" class="form-control-plaintext" id="staticEmail" value=""> -->
+                            <mat-form-field style="width: 100%;">
+                                <mat-label></mat-label>
+                                <input matInput placeholder="" value="">
+                            </mat-form-field>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row d-flex justify-content-start m-5">
-                <span class="btn btn-success btn-sm" style="width: 70px;">Save</span>
-                <span class="btn btn-success btn-sm mx-5" style="width: 150px;">Submit Auction</span>
+                <button mat-flat-button color="primary" style="width: 130px;">Save</button>
+                <button mat-flat-button color="primary" style="width: 150px;" class="mx-5">Submit Auction</button>
+                <!-- <span class="btn btn-success btn-sm" style="width: 70px;">Save</span>
+                <span class="btn btn-success btn-sm mx-5" style="width: 150px;">Submit Auction</span> -->
             </div>
         </div>
         <!-- detail info on the right -->
@@ -111,7 +127,7 @@
                         <p>Hello world, I am mr ABC ...</p>
                     </div>
                     <div class="row d-flex justify-content-center">
-                        <span class="btn btn-success btn-sm" style="width: 100px;">Show More</span>
+                        <button mat-flat-button color="primary" style="width: 120px;">Show More</button>
                     </div>
                 </div>
             </div>

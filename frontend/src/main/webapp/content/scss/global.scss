@@ -1,3 +1,4 @@
+@use '@angular/material' as mat;
 @import 'bootstrap-variables';
 @import 'bootstrap/scss/functions';
 @import 'bootswatch/dist/materia/variables';
@@ -207,6 +208,36 @@ angular-cli removes postcss-rtl processed inline css, processed rules must be ad
     }
   }
 }
+
+
+
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$green-palette, 400);
+$my-accent: mat.define-palette(mat.$purple-palette, A400);
+$my-warn: mat.define-palette(mat.$red-palette, 500);
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn,
+ ),
+ density: 0,
+));
+
+// Emit theme-dependent styles for common features used across multiple components.
+@include mat.core-theme($my-theme);
+
+// Emit styles for MatButton based on `$my-theme`. Because the configuration
+// passed to `define-light-theme` omits typography, `button-theme` will not
+// emit any typography styles.
+@include mat.button-theme($my-theme);
+
+// Include the theme mixins for other components you use here.
+
+
+
 /* jhipster-needle-scss-add-main JHipster will add new css style */
 
 
